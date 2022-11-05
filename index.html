@@ -34,8 +34,6 @@
         </form>
     </nav>
 
-    <div class="carousel fade"></div>
-
     <div id="memes"> </div>
     <div class="btn">
         <button class="see_more_btn">See More</button>
@@ -142,20 +140,6 @@
 
 
     // let template = ["https://i.imgflip.com/4/30b1gx.jpg","https://dankest.co/wp-content/uploads/2021/06/3umnr3-1024x698.jpg","https://memes.co.in/memes/update/uploads/2022/01/WhatsApp-Image-2022-01-14-at-6.37.53-PM-e1642165741963-950x500.jpeg","https://www.meme-arsenal.com/memes/f88c1d64204759e414c14a25a7aa2227.jpg","https://a.pinatafarm.com/640x731/f7a452e7a3/bestbetter-blurst.jpg","https://a.pinatafarm.com/600x908/de6a26a734/both-buttons-pressed.jpg/m/522x0","http://images6.fanpop.com/image/photos/43200000/Meme-template-memes-43292128-611-746.jpg","https://memetemplatehouse.com/wp-content/uploads/2021/06/voldemort-death-scene-with-Harry-and-Dumbledore-meme-template-820x1024.jpg","https://www.meme-arsenal.com/memes/07b473a6ba47cd0b8fc96e4d672da912.jpg"]
-    const images = ["https://images.pexels.com/photos/8294606/pexels-photo-8294606.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8294606.jpg&fm=jpg", "https://images.pexels.com/photos/8294620/pexels-photo-8294620.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8294620.jpg&fm=jpg", "https://images.pexels.com/photos/8294660/pexels-photo-8294660.jpeg?cs=srgb&dl=pexels-pavel-danilyuk-8294660.jpg&fm=jpg"];
-    const carousel = document.querySelector(".carousel");
-    const interval = setInterval(function () {
-        startCarousel();
-    }, 3000);
-    var index = 1;
-
-    startCarousel = () => {
-        carousel.style.backgroundImage = `url(${images[index++]})`;
-        carousel.classList.remove("fade");
-        void carousel.offsetWidth;
-        carousel.classList.add("fade");
-        if (index > images.length - 1) index = 0;
-    }
 </script>
 
 </html>
