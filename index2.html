@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            <img src="meme_icon.png" alt="">
+        </div>
+        <div class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index2.html">Generate Memes</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </div>
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <form action="#">
+            <input type="search" class="search-data" placeholder="Search" required>
+            <button type="submit" class="fas fa-search"></button>
+        </form>
+    </nav>
+    <div id="des_container">
+    <div class="description">
+        <p id="des">Get Trending and Funny Meme Templates</p>
+    </div>
+</div>
+    <div id="memes"> </div>
+
+
+    <div id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <buttons>
+            <button id="leftSlide" onclick="nextModal()" ><</button>
+            <button id="rightSlide" onClick="prevModal()">></button>
+        </buttons>
+       
+    </div>
+    
+
+    <script>
+        let = curentModalIndex = 0
+        let template = ["https://i.imgflip.com/4/30b1gx.jpg", "https://dankest.co/wp-content/uploads/2021/06/3umnr3-1024x698.jpg", "https://www.meme-arsenal.com/memes/f88c1d64204759e414c14a25a7aa2227.jpg", "https://a.pinatafarm.com/640x731/f7a452e7a3/bestbetter-blurst.jpg", "https://a.pinatafarm.com/600x908/de6a26a734/both-buttons-pressed.jpg/m/522x0", "http://images6.fanpop.com/image/photos/43200000/Meme-template-memes-43292128-611-746.jpg", "https://memetemplatehouse.com/wp-content/uploads/2021/06/voldemort-death-scene-with-Harry-and-Dumbledore-meme-template-820x1024.jpg", "https://www.meme-arsenal.com/memes/07b473a6ba47cd0b8fc96e4d672da912.jpg","https://www.memeatlas.com/images/templates/pepe-ceo-of-meme-template.png","https://s.keepmeme.com/files/en_posts/20200818/bdc2002de0a6e3a476d5848edc2358d9be-smart-use-your-head-iq-200-black-man-pointing-finger-to-his-head.jpg","https://cdn.ebaumsworld.com/2020/08/21/033702/86362079/meme_template_spiderman.jpg","https://pics.me.me/these-meme-templates-are-opposites-tell-me-im-wrong-72324251.png","https://allmemetemplates.files.wordpress.com/2020/02/15933273833277531914975469620300.jpg","http://getmemetemplates.com/wp-content/uploads/2020/01/FB_IMG_1578711116905.jpg","https://indianmemetemplates.com/wp-content/uploads/that-feels-weird-but-i-will-allow-it-1024x1024.jpg","https://i0.wp.com/adthejokester.com/wp-content/uploads/2021/06/fb_img_16236890908846507278084516395802.jpg?resize=858%2C1416&ssl=1","https://comicsandmemes.com/wp-content/uploads/the-office-blank-meme-template-dwight-stares-at-the-camera.jpg","https://sm.mashable.com/t/mashable_in/photo/default/pakistani-actors-fire-filled-selfie-is-the-new-relatable-mem_aaqk.1248.jpg","https://memetemplatehouse.com/wp-content/uploads/2020/05/Yellow-Glasses-Guy-2-panel-10052020221756_compress57.jpg","https://www.bollywoodhungama.com/wp-content/uploads/2021/06/19-most-popular-HILARIOUS-The-Family-Man-Season-2-meme-templates-which-one-is-your-most-favourite-16-1.jpg"]
+        renderTypical()
+        function renderTypical(){
+            let output = ``
+            let index = 0
+            for (let src of template) {
+                output += `<img onclick={showModal(${index})} src=${src} /> `
+                index++;
+            }
+            document.querySelector("#memes").innerHTML += output;
+        }
+
+        function showModal(theIndex){
+        document.querySelector("#modal").style.display = "flex";
+        document.querySelector("#modal img").src = template[theIndex]
+        curentModalIndex = theIndex
+    }
+
+
+    function closeModal(theIndex){
+        document.querySelector("#modal").style.display = "none";
+    }
+
+    function nextModal(){
+        curentModalIndex--;
+        document.querySelector("#modal img").src = template[curentModalIndex]
+    }
+
+    function prevModal(){
+        curentModalIndex++;
+        document.querySelector("#modal img").src = template[curentModalIndex]
+    }
+    </script>
+</body>
+
+</html>
